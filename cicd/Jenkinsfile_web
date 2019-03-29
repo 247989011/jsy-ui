@@ -1,0 +1,31 @@
+pipeline {
+   agent any
+
+   environment {
+      PRJ_HOME_LINUX = '/home/jenkins/workspace/mall_admin_web/mallweb/'
+      PRJ_HOME_LINUX_UI_DIR = '/home/nginx/html/mallweb/'
+      PRJ_HOME_LINUX1 = '/home/jenkins/workspace/mall_admin_web/mall-front/'
+      PRJ_HOME_LINUX_UI_DIR1 = '/home/nginx/html/mall/'
+    }
+
+	stages {
+			stage('Deploy mall-admin-web UI') {
+				steps {
+					echo " Deploy qmweb UI ..."
+					script {
+                		def remote = [:]
+						remote.name = 'test'
+						remote.host = '39.108.100.113'
+						remote.user = 'root'
+						remote.password = 'Wxf840204'
+						remote.allowAnyHosts = true
+						sshCommand  remote:remote, command:  "mkdir -p ${PRJ_HOME_LINUX_UI_DIR} && \
+				         /bin/cp -rf ${PRJ_HOME_LINUX}/*  ${PRJ_HOME_LINUX_UI_DIR}  "
+             sshCommand  remote:remote, command:  "mkdir -p ${PRJ_HOME_LINUX_UI_DIR1} && \
+                 /bin/cp -rf ${PRJ_HOME_LINUX1}/*  ${PRJ_HOME_LINUX_UI_DIR1}  "
+                    }
+					echo "Deploy mall-admin-web finsh."
+				}
+			}
+		}
+}
