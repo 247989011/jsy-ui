@@ -20,7 +20,6 @@ v-charts | 基于Echarts的图表框架 | [https://v-charts.js.org/](https://v-c
 Js-cookie | cookie管理工具 | [https://github.com/js-cookie/js-cookie](https://github.com/js-cookie/js-cookie)
 nprogress | 进度条控件 | [https://github.com/rstacruz/nprogress](https://github.com/rstacruz/nprogress)
 
-
 ### 项目布局
 
 ``` lua
@@ -52,6 +51,7 @@ src -- 源码目录
 ```
 
 ## 搭建步骤
+
 - 下载node并安装：[https://nodejs.org/dist/v8.9.4/node-v8.9.4-x64.msi](https://nodejs.org/dist/v8.9.4/node-v8.9.4-x64.msi)；
 - 该项目为前后端分离项目，访问本地访问接口需搭建后台环境，搭建请参考后端项目[传送门](https://github.com/macrozheng/mall);
 - 访问在线接口无需搭建后台环境，只需将config/dev.env.js文件中的BASE_API改为[http://39.98.69.210:8080](http://localhost:39.98.69.210:8080)即可；
@@ -78,14 +78,14 @@ mutations: {
     },
 ```
 4. 在ajax拦截器里，将token携带到header里，服务器就会接受token，来区分那个用户，有那些权限
-  
+
   `src/router /axios.js`
 
 
 ## 自定义返回处理
 HTTPresponse拦截:response ,并处理公共异常
  `axios.interceptors.response` 
- 
+
 ## 按钮权限控制
 
 在后台菜单管理中给指定菜单添加 按钮节点 需要指定 权限标志
