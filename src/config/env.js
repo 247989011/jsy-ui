@@ -17,10 +17,10 @@ const iconfontVersion = ['567566_r22zi6t8noas8aor', '599693_0b5sleso3f1j1yvi', '
 const iconfontUrl = `//at.alicdn.com/t/font_$key.css`
 const codeUrl = `/admin/code`
 if (process.env.NODE_ENV == 'development') {
-  baseUrl = `http://127.0.0.1:8086/`
+  baseUrl = `http://127.0.0.1:8087/`
   fileUrl = 'http://127.0.0.1/portal/mall/file/readImage?imagePath=';
 } else if (process.env.NODE_ENV == 'production') {
-  baseUrl = `http://39.108.100.113:8086`
+  baseUrl = `http://39.108.100.113:8087`
   fileUrl = 'http://39.108.100.113/portal/mall/file/readImage?imagePath=';
 }
 

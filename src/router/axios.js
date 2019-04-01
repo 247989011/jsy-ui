@@ -42,12 +42,13 @@ axios.interceptors.response.use(data => {
   if (data.code == 200) {
     return data.data
   }
+  const message = data.message || errorCode[data.code] || errorCode['default']
   Message({
-    message: errorCode[data.code] || data.message,
+    message: message,
     type: 'error'
   })
 
-  return data.data;
+  return Promise.reject(new Error(message));
 
 }, error => {//response 返回非200状态数据处理
   NProgress.done()

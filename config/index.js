@@ -1,6 +1,6 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
-var baseUrl = 'http://localhost:8086';
+var baseUrl = 'http://localhost:8087';
 
 module.exports = {
   build: {
